@@ -1,0 +1,182 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de color */
+:root {
+  --bg-color: #F8F6F2;         /* marfil cálido */
+  --text-color: #3E3A37;       /* gris profundo elegante */
+
+  --gold-light: #F5E6B3;       /* brillo */
+  --gold-main: #D4AF37;        /* dorado base */
+  --gold-dark: #9C7A1C;        /* profundidad */
+}
+
+.title{
+  background: linear-gradient(
+    120deg,
+    #F5E6B3 0%,
+    #D4AF37 40%,
+    #9C7A1C 70%,
+    #F5E6B3 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.2px rgba(156,122,28,0.3);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: 'Paris';
+  src: url('Parisienne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arena';
+  src: url('OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Contenedor principal */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+/* Subtítulo */
+.subtitle{
+  font-family: 'Arena', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+
+/* Botón */
+.enter-btn{
+  background: linear-gradient(
+    120deg,
+    #F5E6B3,
+    #D4AF37,
+    #9C7A1C
+  );
+
+  color: #3E3A37;
+  border: none;
+
+  padding: 0.7rem 2.4rem;
+  border-radius: 999px;
+
+  font-family: 'Arena', sans-serif;
+  margin-top: 1rem;
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  opacity: 0;
+  animation: subirSuave 1.2s ease-out forwards;
+  animation-delay: 0.6s;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.enter-btn:hover{
+  background: linear-gradient(
+    120deg,
+    #FFF3C4,
+    #E0BC4A,
+    #B8962E
+  );
+
+  color: #2A2725;
+
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.enter-btn:active{
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.enter-btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230,164,160,0.35);
+}
+
+
+/* Responsive extra para pantallas muy chicas */
+@media (max-width: 360px) {
+  .hero {
+    gap: 1.2rem;
+  }
+}
+
+@keyframes subirSuave {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  letter-spacing: 1px;
+  font-family: 'Paris', cursive;
+  opacity: 0;
+  animation: subirSuave 1.2s ease-out forwards;
+  display: inline-block;
+padding: 0 0.05em;
+font-weight: normal;
+}
+
+.title {
+  font-family: 'Paris', cursive;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  letter-spacing: 0px;
+  
+}
+
+.subtitle {
+  font-size: clamp(1rem, 4vw, 1.4rem);
+  line-height: 1.4;
+  max-width: 600px;
+  letter-spacing: 0.5px;
+  font-family: 'Arena', sans-serif;
+  opacity: 0;
+  animation: subirSuave 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+
+
